@@ -1,12 +1,12 @@
 import * as React from "react";
 import PostList from "./PostList";
 
-const BlogList = props => {
+const BlogList = (props: any) => {
   const [state, setState] = React.useState({
     selectedBlog: props.selectedBlog
   });
 
-  const changeSelection = blog => {
+  const changeSelection = (blog: any) => {
     var APIKey = "AIzaSyCoYdGRYle9GBMjeHtYGd2aYx03aWFVQpg";
     var bloggerAPIURL =
       "https://www.googleapis.com/blogger/v3/blogs/" +
@@ -32,7 +32,7 @@ const BlogList = props => {
   return (
     <div className="bloggerContainer">
       <div className="bloggerListContainer">
-        {props.data.map((blog, i) => (
+        {props.data.map((blog: any, i: any) => (
           <button
             className="blogger"
             key={i}

@@ -5,14 +5,14 @@ import { Markup } from "interweave";
 import Delete from "@material-ui/icons/Delete";
 import axios from "axios";
 
-const PostList = props => {
+const PostList = (props: any) => {
   const [state, setState] = React.useState({
     posts: []
   });
   React.useEffect(() => {
     getPosts(props.selectedBlog);
   }, []);
-  const getPosts = blogId => {
+  const getPosts = (blogId: any) => {
     var APIKey = "AIzaSyCoYdGRYle9GBMjeHtYGd2aYx03aWFVQpg";
     var bloggerAPIURL =
       "https://www.googleapis.com/blogger/v3/blogs/" +
@@ -46,7 +46,7 @@ const PostList = props => {
         </IconButton>
       </div>
       <div className="postDetails">
-        {state.posts.map((post, i) => (
+        {state.posts.map((post: any, i: any) => (
           <div className="singlePost">
             <div>{post.title} </div>
             <Markup content={post.content} />

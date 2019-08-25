@@ -6,7 +6,7 @@ import * as React from "react";
 import axios from "axios";
 import BlogList from "./BlogList";
 
-const Header = props => {
+const Header = (props: any) => {
   React.useEffect(() => {
     getBlogInfo();
   }, []);
@@ -45,10 +45,11 @@ const Header = props => {
       .then(response => {
         return console.log(response);
       })
-      .then(answer => {})
+      .then(answer => {
+        getBlogInfo();
+      })
       .catch(error => {
         console.log(error);
-        getBlogInfo();
       });
   };
   const changevalue = () => {};
