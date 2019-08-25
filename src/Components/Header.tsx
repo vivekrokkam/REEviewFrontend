@@ -5,6 +5,7 @@ import AddCircle from "@material-ui/icons/AddCircle";
 import * as React from "react";
 import axios from "axios";
 import BlogList from "./BlogList";
+import { any } from "prop-types";
 
 const Header = (props: any) => {
   React.useEffect(() => {
@@ -33,9 +34,9 @@ const Header = (props: any) => {
   };
 
   const addBlog = () => {
-    console.log(document.getElementById("Search-Bar").value);
+    console.log(state.searchText);
     fetch("https://bloggerzapi.azurewebsites.net/api/Bloggers", {
-      body: document.getElementById("Search-Bar").value,
+      body: state.searchText,
       headers: {
         Accept: "text/plain",
         "Content-Type": "application/json"
@@ -52,7 +53,7 @@ const Header = (props: any) => {
         console.log(error);
       });
   };
-  const changevalue = () => {};
+
   const [state, setState] = React.useState({
     searchText: "",
     blogs: [],
@@ -73,8 +74,9 @@ const Header = (props: any) => {
               placeholder="Add Video Url"
               margin="normal"
               variant="outlined"
-              onChange={changevalue}
-              //value ={state.searchText}
+              onChange={(event: any) =>
+                setState({ ...state, searchText: event.target.value })
+              }
               InputProps={{
                 endAdornment: (
                   <InputAdornment position="end">
