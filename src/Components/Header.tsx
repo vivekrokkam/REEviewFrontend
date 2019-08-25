@@ -36,7 +36,7 @@ const Header = (props: any) => {
   const addBlog = () => {
     console.log(state.searchText);
     fetch("https://bloggerzapi.azurewebsites.net/api/Bloggers", {
-      body: state.searchText,
+      body: {"url":state.searchText},
       headers: {
         Accept: "text/plain",
         "Content-Type": "application/json"

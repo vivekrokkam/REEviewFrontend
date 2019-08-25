@@ -49,7 +49,7 @@ const BlogList = (props: any) => {
         ))}
       </div>
       <div className="bloggerDetailContainer">
-        {state.selectedBlog && (
+        {props.data && (
           <PostList data={props.data} selectedBlog={state.selectedBlog} />
         )}
       </div>
