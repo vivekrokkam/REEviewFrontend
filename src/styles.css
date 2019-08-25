@@ -1,0 +1,30 @@
+.bloggerContainer {
+  width: 100%;
+  border: 1px solid #272626;
+}
+.bloggerDetailContainer {
+  width: 70%;
+  display: inline-block;
+  float: left;
+}
+.singlePost {
+  border-bottom: 1px solid #272626;
+}
+.bloggerListContainer {
+  width: 30%;
+  float: left;
+  display: inline-block;
+}
+.bloggerTitle {
+  margin-left: 10px;
+}
+.blogger {
+  border: 1px solid #272626;
+  border-bottom: none;
+  padding: 10px;
+  width: 100%;
+  margin: 0;
+}
+.bloggerIcon {
+  float: right;
+}
