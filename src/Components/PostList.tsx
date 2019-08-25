@@ -3,7 +3,7 @@ import { IconButton } from "@material-ui/core";
 import Edit from "@material-ui/icons/Edit";
 import { Markup } from "interweave";
 import Delete from "@material-ui/icons/Delete";
-import axios from "axios";
+
 
 const PostList = (props: any) => {
   const [state, setState] = React.useState({
@@ -19,7 +19,7 @@ const PostList = (props: any) => {
       blogId +
       "/posts?key=" +
       APIKey;
-    axios(bloggerAPIURL)
+    fetch(bloggerAPIURL)
       .then((ret: any) => {
         return ret.json();
       })

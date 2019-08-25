@@ -12,7 +12,7 @@ const Header = (props: any) => {
     getBlogInfo();
   }, []);
   const getBlogInfo = () => {
-    axios("https://bloggerzapi.azurewebsites.net/api/Bloggers", {
+    fetch("https://bloggerzapi.azurewebsites.net/api/Bloggers", {
       method: "GET"
     })
       .then((ret: any) => {
